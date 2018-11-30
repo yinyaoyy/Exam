@@ -1,0 +1,301 @@
+2016-06-02 14:23:07,856 INFO  org.springframework.context.support.AbstractApplicationContext:510  -> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@14899482: startup date [Thu Jun 02 14:23:07 CST 2016]; root of context hierarchy
+2016-06-02 14:23:08,152 INFO  org.springframework.core.io.support.PropertiesLoaderSupport:172  -> Loading properties file from file [C:\server\apache-tomcat-Exam\Exam\scoreMarker\config\scoremaker.properties]
+2016-06-02 14:23:09,137 INFO  com.examstack.scoremarker.ScoreMarkerWin:43  -> ScoreMarker daemon init done.
+2016-06-02 14:23:09,168 INFO  com.examstack.scoremarker.ScoreMarkerWin:81  -> scoreMaker checking next delivery from message queue
+2018-07-05 16:46:38,851 INFO  org.springframework.context.support.AbstractApplicationContext:510  -> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5b87ed94: startup date [Thu Jul 05 16:46:38 CST 2018]; root of context hierarchy
+2018-07-05 16:46:39,440 INFO  org.springframework.core.io.support.PropertiesLoaderSupport:172  -> Loading properties file from file [D:\workspace\ExamStack\scoreMarker\config\scoremaker.properties]
+2018-07-05 16:46:40,133 WARN  org.springframework.context.support.AbstractApplicationContext:487  -> Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scoreMarkerMain': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.rabbitmq.client.QueueingConsumer com.examstack.scoremarker.ScoreMarkerMain.consumer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at com.examstack.scoremarker.ScoreMarkerWin.init(ScoreMarkerWin.java:39)
+	at com.examstack.scoremarker.ScoreMarkerWin.main(ScoreMarkerWin.java:74)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.rabbitmq.client.QueueingConsumer com.examstack.scoremarker.ScoreMarkerMain.consumer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 12 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1111)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1006)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 14 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 26 more
+Caused by: com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at com.rabbitmq.client.impl.AMQConnection.start(AMQConnection.java:338)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:590)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:612)
+	at com.examstack.scoremarker.config.ScoreMarkConfig.queueingConsumer(ScoreMarkConfig.java:53)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d.CGLIB$queueingConsumer$1(<generated>)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d$$FastClassBySpringCGLIB$$f0d50.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:309)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d.queueingConsumer(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 27 more
+2018-07-05 16:49:31,342 INFO  org.springframework.context.support.AbstractApplicationContext:510  -> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5b87ed94: startup date [Thu Jul 05 16:49:31 CST 2018]; root of context hierarchy
+2018-07-05 16:49:38,194 INFO  org.springframework.core.io.support.PropertiesLoaderSupport:172  -> Loading properties file from file [D:\workspace\ExamStack\scoreMarker\config\scoremaker.properties]
+2018-07-05 16:49:42,895 WARN  org.springframework.context.support.AbstractApplicationContext:487  -> Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scoreMarkerMain': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.rabbitmq.client.QueueingConsumer com.examstack.scoremarker.ScoreMarkerMain.consumer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at com.examstack.scoremarker.ScoreMarkerWin.init(ScoreMarkerWin.java:39)
+	at com.examstack.scoremarker.ScoreMarkerWin.main(ScoreMarkerWin.java:74)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.rabbitmq.client.QueueingConsumer com.examstack.scoremarker.ScoreMarkerMain.consumer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 12 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1111)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1006)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 14 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 26 more
+Caused by: com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at com.rabbitmq.client.impl.AMQConnection.start(AMQConnection.java:338)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:590)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:612)
+	at com.examstack.scoremarker.config.ScoreMarkConfig.queueingConsumer(ScoreMarkConfig.java:53)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d.CGLIB$queueingConsumer$2(<generated>)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d$$FastClassBySpringCGLIB$$f0d50.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:309)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d.queueingConsumer(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 27 more
+2018-07-05 16:56:40,577 INFO  org.springframework.context.support.AbstractApplicationContext:510  -> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5b87ed94: startup date [Thu Jul 05 16:56:40 CST 2018]; root of context hierarchy
+2018-07-05 16:56:41,087 INFO  org.springframework.core.io.support.PropertiesLoaderSupport:172  -> Loading properties file from file [D:\workspace\ExamStack\scoreMarker\config\scoremaker.properties]
+2018-07-05 16:56:41,460 WARN  org.springframework.context.support.AbstractApplicationContext:487  -> Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scoreMarkerMain': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.rabbitmq.client.QueueingConsumer com.examstack.scoremarker.ScoreMarkerMain.consumer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at com.examstack.scoremarker.ScoreMarkerWin.init(ScoreMarkerWin.java:39)
+	at com.examstack.scoremarker.ScoreMarkerWin.main(ScoreMarkerWin.java:74)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.rabbitmq.client.QueueingConsumer com.examstack.scoremarker.ScoreMarkerMain.consumer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 12 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1111)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1006)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 14 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 26 more
+Caused by: com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at com.rabbitmq.client.impl.AMQConnection.start(AMQConnection.java:338)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:590)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:612)
+	at com.examstack.scoremarker.config.ScoreMarkConfig.queueingConsumer(ScoreMarkConfig.java:53)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d.CGLIB$queueingConsumer$3(<generated>)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d$$FastClassBySpringCGLIB$$f0d50.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:309)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d.queueingConsumer(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 27 more
+2018-07-05 17:09:28,516 INFO  org.springframework.context.support.AbstractApplicationContext:510  -> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@5b87ed94: startup date [Thu Jul 05 17:09:28 CST 2018]; root of context hierarchy
+2018-07-05 17:10:15,660 INFO  org.springframework.core.io.support.PropertiesLoaderSupport:172  -> Loading properties file from file [D:\workspace\ExamStack\scoreMarker\config\scoremaker.properties]
+2018-07-05 17:10:15,990 WARN  org.springframework.context.support.AbstractApplicationContext:487  -> Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scoreMarkerMain': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.rabbitmq.client.QueueingConsumer com.examstack.scoremarker.ScoreMarkerMain.consumer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at com.examstack.scoremarker.ScoreMarkerWin.init(ScoreMarkerWin.java:39)
+	at com.examstack.scoremarker.ScoreMarkerWin.main(ScoreMarkerWin.java:74)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.rabbitmq.client.QueueingConsumer com.examstack.scoremarker.ScoreMarkerMain.consumer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 12 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1111)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1006)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 14 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 26 more
+Caused by: com.rabbitmq.client.AuthenticationFailureException: ACCESS_REFUSED - Login was refused using authentication mechanism PLAIN. For details see the broker logfile.
+	at com.rabbitmq.client.impl.AMQConnection.start(AMQConnection.java:338)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:590)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:612)
+	at com.examstack.scoremarker.config.ScoreMarkConfig.queueingConsumer(ScoreMarkConfig.java:53)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d.CGLIB$queueingConsumer$1(<generated>)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d$$FastClassBySpringCGLIB$$f0d50.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:309)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$ccd5500d.queueingConsumer(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 27 more
+2018-07-05 17:34:54,813 INFO  org.springframework.context.support.AbstractApplicationContext:510  -> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1f36e637: startup date [Thu Jul 05 17:34:54 CST 2018]; root of context hierarchy
+2018-07-05 17:34:55,475 INFO  org.springframework.core.io.support.PropertiesLoaderSupport:172  -> Loading properties file from file [D:\workspace\ExamStack\scoreMarker\config\scoremaker.properties]
+2018-07-05 17:34:55,883 WARN  org.springframework.context.support.AbstractApplicationContext:487  -> Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'scoreMarkerMain': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.rabbitmq.client.QueueingConsumer com.examstack.scoremarker.ScoreMarkerMain.consumer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is java.io.IOException
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1202)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:762)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480)
+	at com.examstack.scoremarker.ScoreMarkerMain.main(ScoreMarkerMain.java:56)
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: private com.rabbitmq.client.QueueingConsumer com.examstack.scoremarker.ScoreMarkerMain.consumer; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is java.io.IOException
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331)
+	... 11 more
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'queueingConsumer' defined in com.examstack.scoremarker.config.ScoreMarkConfig: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is java.io.IOException
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1111)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1006)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:504)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1051)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:949)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533)
+	... 13 more
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.rabbitmq.client.QueueingConsumer]: Factory method 'queueingConsumer' threw exception; nested exception is java.io.IOException
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588)
+	... 25 more
+Caused by: java.io.IOException
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:106)
+	at com.rabbitmq.client.impl.AMQChannel.wrap(AMQChannel.java:102)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:124)
+	at com.rabbitmq.client.impl.AMQConnection.start(AMQConnection.java:374)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:590)
+	at com.rabbitmq.client.ConnectionFactory.newConnection(ConnectionFactory.java:612)
+	at com.examstack.scoremarker.config.ScoreMarkConfig.queueingConsumer(ScoreMarkConfig.java:62)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$46b7b240.CGLIB$queueingConsumer$1(<generated>)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$46b7b240$$FastClassBySpringCGLIB$$9e066033.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:228)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:309)
+	at com.examstack.scoremarker.config.ScoreMarkConfig$$EnhancerBySpringCGLIB$$46b7b240.queueingConsumer(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162)
+	... 26 more
+Caused by: com.rabbitmq.client.ShutdownSignalException: connection error; protocol method: #method<connection.close>(reply-code=530, reply-text=NOT_ALLOWED - access to vhost '/' refused for user 'admin', class-id=10, method-id=40)
+	at com.rabbitmq.utility.ValueOrException.getValue(ValueOrException.java:67)
+	at com.rabbitmq.utility.BlockingValueOrException.uninterruptibleGetValue(BlockingValueOrException.java:33)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.getReply(AMQChannel.java:343)
+	at com.rabbitmq.client.impl.AMQChannel.privateRpc(AMQChannel.java:216)
+	at com.rabbitmq.client.impl.AMQChannel.exnWrappingRpc(AMQChannel.java:118)
+	... 40 more
+2018-07-05 17:39:37,378 INFO  org.springframework.context.support.AbstractApplicationContext:510  -> Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@1f36e637: startup date [Thu Jul 05 17:39:37 CST 2018]; root of context hierarchy
+2018-07-05 17:39:37,752 INFO  org.springframework.core.io.support.PropertiesLoaderSupport:172  -> Loading properties file from file [D:\workspace\ExamStack\scoreMarker\config\scoremaker.properties]
+2018-07-05 17:39:38,851 INFO  com.examstack.scoremarker.ScoreMarkerMain:93  -> scoreMaker checking next delivery from message queue
